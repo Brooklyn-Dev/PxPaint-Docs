@@ -6,13 +6,13 @@
       {
         "name": "test.md",
         "type": "file",
-        "href": "https://github.com/Brooklyn-Dev/PxPaint-Docs/blob/main/Test%20Directory/test.md"
+        "href": "/Test Directory/test.md"
       }
     ]
   },
   {
     "name": "overview.md",
     "type": "file",
-    "href": "https://github.com/Brooklyn-Dev/PxPaint-Docs/blob/main/overview.md"
+    "href": "overview.md"
   }
 ]

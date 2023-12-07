@@ -16,7 +16,7 @@ def create_contents_json(username, repo_name, branch="main"):
         json.dump(tree, json_file, indent=2)
 
 
-def build_tree(contents):
+def build_tree(contents, current_path=""):
     tree = []
 
     for item in contents:
@@ -25,13 +25,14 @@ def build_tree(contents):
             tree.append({
                 "name": item["name"],
                 "type": "dir",
-                "children": build_tree(subtree)
+                "children": build_tree(subtree, current_path=f"{current_path}/{item['name']}")
             })
         elif item["type"] == "file" and item["name"].endswith(".md"):
+            relative_path = f"{current_path}/{item['name']}" if current_path else item['name']
             tree.append({
                 "name": item["name"],
                 "type": "file",
-                "href": item["_links"]["html"]
+                "href": relative_path
             })
 
     return tree

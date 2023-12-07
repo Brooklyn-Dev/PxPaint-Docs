@@ -20,7 +20,7 @@ def build_tree(contents):
     tree = []
 
     for item in contents:
-        if item["type"] == "dir":
+        if item["type"] == "dir" and item["name"] != ".github":
             subtree = get_github_repo_contents(username, repo_name, path=item["path"])
             tree.append({
                 "name": item["name"],

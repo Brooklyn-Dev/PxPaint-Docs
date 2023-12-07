@@ -1,6 +1,18 @@
 [
-	{
-		"name": "overview.md",
-		"type": "file"
-	}
+  {
+    "name": "Test Directory",
+    "type": "dir",
+    "children": [
+      {
+        "name": "test.md",
+        "type": "file",
+        "href": "https://github.com/Brooklyn-Dev/PxPaint-Docs/blob/main/Test%20Directory/test.md"
+      }
+    ]
+  },
+  {
+    "name": "overview.md",
+    "type": "file",
+    "href": "https://github.com/Brooklyn-Dev/PxPaint-Docs/blob/main/overview.md"
+  }
 ]

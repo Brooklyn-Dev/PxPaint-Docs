@@ -12,7 +12,7 @@ def create_contents_json(username, repo_name, branch="main"):
     contents = get_github_repo_contents(username, repo_name, branch=branch)
     tree = build_tree(contents)
     
-    with open("contents.json", "w") as json_file:
+    with open("content.json", "w") as json_file:
         json.dump(tree, json_file, indent=2)
 
 

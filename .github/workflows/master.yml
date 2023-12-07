@@ -1,0 +1,38 @@
+name: Update Docs
+
+on:
+    push:
+        branches:
+            - main
+
+jobs:
+    update-docs:
+        runs-on: ubuntu-latest
+
+        defaults:
+            run:
+                working-directory: ./
+
+        steps:
+            - uses: actions/checkout@v4
+
+            - name: Setup Python
+              uses: actions/setup-python@v5
+              with:
+                  python-version: 3.11
+
+            - name: Install Dependencies
+              run: |
+                  python -m pip install --upgrade pip
+                  pip install -r ../requirements.txt
+
+            - name: Generate JSON
+              run: python ./generate_docs_json.py
+
+            - name: Commit & Push Changes
+              run: |
+                  git config --global user.email "github-actions@github.com"
+                  git config --global user.name "GitHub Actions"
+                  git add content.json
+                  git commit -m "Update docs.json"
+                  git push

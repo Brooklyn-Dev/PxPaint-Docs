@@ -27,10 +27,11 @@ def build_tree(contents):
                 "type": "dir",
                 "children": build_tree(subtree)
             })
-        else:
+        elif item["type"] == "file" and item["name"].endswith(".md"):
             tree.append({
                 "name": item["name"],
-                "type": "file"
+                "type": "file",
+                "href": item["_links"]["html"]
             })
 
     return tree

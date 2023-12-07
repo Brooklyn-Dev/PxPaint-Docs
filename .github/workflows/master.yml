@@ -34,5 +34,5 @@ jobs:
                   git config --global user.email "github-actions@github.com"
                   git config --global user.name "GitHub Actions"
                   git add ./content.json
-                  git commit -m "Update docs.json"
+                  git commit -m "Update content.json"
                   git push
